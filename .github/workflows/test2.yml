@@ -3,6 +3,13 @@
 # You will probably have to modify it in order to get it working
 # just the way you want. See https://jupyterbook.org/advanced/circleci.html
 # for more information
+
+name: deploy-book2 
+
+# Only run this when the master branch changes
+on:
+  [push]
+  
 version: 2.1
 jobs:
   build_page_html:
