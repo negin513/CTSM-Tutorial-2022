@@ -1,4 +1,8 @@
-#  Welcome to the 2022 CTSM mini-tutorial (WIP)    
+#  Welcome to the 2022 CTSM mini-tutorial (WIP)
+
+![example workflow](https://github.com/negin513/CTSM-Tutorial-2022/actions/workflows/test.yml/badge.svg)
+![example workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
+
 This repository includes materials for the [Community Terrestrial Systems Model (CTSM)](https://github.com/ESCOMP/CTSM) Spring 2022 mini-tutorial. 
 
 
