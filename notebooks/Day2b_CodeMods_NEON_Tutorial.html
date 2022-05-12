@@ -1,0 +1,723 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Modifications Tutorial &#8212; CTSM Mini-tutorial 2022</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/ncar_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">CTSM Mini-tutorial 2022</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lesson 0
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Day0a_GitStarted.html">
+   Tutorial 0a:
+   <em>
+    CTSM, CESM-Lab, &amp; Git
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Day0b_NEON_Simulation_Tutorial.html">
+   Tutorial 1: CTSM Simulations at NEON Tower Sites
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lesson 1
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Day1a_GlobalCase.html">
+   Tutorial 1a:
+   <em>
+    Global Simulations
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Day1b_GlobalVisualization.html">
+   Tutorial 1b:
+   <em>
+    Global Visualizations
+   </em>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lesson 2
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Day2_GenericSinglePoint.html">
+   Tutorial 2b: Running a generic single-point case
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/Day2b_CodeMods_NEON_Tutorial.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/NCAR/CTSM-Tutorial-2022"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/NCAR/CTSM-Tutorial-2022/issues/new?title=Issue%20on%20page%20%2Fnotebooks/Day2b_CodeMods_NEON_Tutorial.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/NCAR/CTSM-Tutorial-2022/edit/master/docs/notebooks/Day2b_CodeMods_NEON_Tutorial.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/NCAR/CTSM-Tutorial-2022/master?urlpath=tree/docs/notebooks/Day2b_CodeMods_NEON_Tutorial.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-fork-from-ctsm-repository">
+   1- Create a fork from CTSM repository
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-up-git-and-github-on-your-machine">
+   2- Setting Up Git and GitHub on your machine
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clone-your-forked-repository">
+   3- Clone your forked repository
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#make-your-code-modifications">
+   4- Make your code modifications:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#save-your-changes-to-your-github-repository">
+   5- Save your changes to your github repository
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#run-ctsm-using-your-modifications">
+   6- Run CTSM using your modifications.
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Code Modifications Tutorial</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-fork-from-ctsm-repository">
+   1- Create a fork from CTSM repository
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-up-git-and-github-on-your-machine">
+   2- Setting Up Git and GitHub on your machine
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clone-your-forked-repository">
+   3- Clone your forked repository
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#make-your-code-modifications">
+   4- Make your code modifications:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#save-your-changes-to-your-github-repository">
+   5- Save your changes to your github repository
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#run-ctsm-using-your-modifications">
+   6- Run CTSM using your modifications.
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="code-modifications-tutorial">
+<h1>Code Modifications Tutorial<a class="headerlink" href="#code-modifications-tutorial" title="Permalink to this headline">¶</a></h1>
+<p>Before starting this tutorial, you should familiarize yourself with Git and GitHub.</p>
+<p>Git is an open-source version control software to track your changes in the source code.</p>
+<p>GitHub provides a centralized online service to host the source code and version control using Git.</p>
+<p>This tutorial provides a hands-on tutorial for Git and GitHub:
+<a class="reference external" href="https://swcarpentry.github.io/git-novice/">https://swcarpentry.github.io/git-novice/</a></p>
+<p>It is recommended that you go through the first tutorial (<code class="docutils literal notranslate"><span class="pre">NEON_Simulation_Tutorial.ipynb</span></code>) and run the simulations using the original code, so you can compare the results of the modified code with the original code.</p>
+<hr class="docutils" />
+<p><strong>Warning</strong></p>
+<blockquote>
+<div><p>You should already have some familiarity with CTSM workflow, before attempting any code modifications.</p>
+</div></blockquote>
+<hr class="docutils" />
+<div class="section" id="create-a-fork-from-ctsm-repository">
+<h2>1- Create a fork from CTSM repository<a class="headerlink" href="#create-a-fork-from-ctsm-repository" title="Permalink to this headline">¶</a></h2>
+<p>For saving your progress via GitHub you need to create your own <code class="docutils literal notranslate"><span class="pre">fork</span></code> of the CTSM repository.</p>
+<hr class="docutils" />
+<p><strong>NOTE</strong></p>
+<blockquote>
+<div><p>A <code class="docutils literal notranslate"><span class="pre">fork</span></code> is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
+A normal user will not have the access to write to the CTSM original repository. Therefore, you need to create your own repository by forking the original repository to push your changes.</p>
+</div></blockquote>
+<hr class="docutils" />
+<p>You can create your own fork of the CTSM repository by using the fork button in the upper right corner of the <a class="reference external" href="https://github.com/ESCOMP/CTSM">CTSM reository page</a>.</p>
+<ul class="simple">
+<li><p>Login to your GitHub account</p></li>
+<li><p>Navigate to the original <a class="reference external" href="https://github.com/ESCOMP/CTSM">CTSM repository</a> (<code class="docutils literal notranslate"><span class="pre">escomp/CTSM</span></code>)</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">fork</span></code> button to create a fork of CTSM repository in your account</p></li>
+</ul>
+<p><img alt="Screen Shot 2022-03-23 at 1.36.11 PM.png" src="notebooks/attachment:f351b282-7768-444c-8f37-42afcc0a5aef.png" /></p>
+<p>Your forked repository will be under your account name:</p>
+<p><a class="reference external" href="https://github.com/YOUR-USER-NAME/CTSM">https://github.com/YOUR-USER-NAME/CTSM</a></p>
+<p>For example, for the username (<code class="docutils literal notranslate"><span class="pre">negin513</span></code>) the forked repo is:</p>
+<p><a class="reference external" href="https://github.com/negin513/CTSM">https://github.com/negin513/CTSM</a></p>
+<p>You can make any modifications you’d like to your repository.</p>
+</div>
+<div class="section" id="setting-up-git-and-github-on-your-machine">
+<h2>2- Setting Up Git and GitHub on your machine<a class="headerlink" href="#setting-up-git-and-github-on-your-machine" title="Permalink to this headline">¶</a></h2>
+<p>When using Git and GitHub on a new computer/machine you need to configure a few settings.</p>
+<p>If you have already done this step, you don’t need to repeat this step.</p>
+<p>You might need to setup your name and email for git/github for the first time in the container.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="s2">&quot;John Doe&quot;</span>
+<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="n">johndoe</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span>
+</pre></div>
+</div>
+<p>Now that you have set up everything you can start downloading and modifying your code in the container.</p>
+</div>
+<div class="section" id="clone-your-forked-repository">
+<h2>3- Clone your forked repository<a class="headerlink" href="#clone-your-forked-repository" title="Permalink to this headline">¶</a></h2>
+<p>In this step, you need to <code class="docutils literal notranslate"><span class="pre">clone</span></code> your own fork, so you can edit it locally in the container.</p>
+<hr class="docutils" />
+<p><strong>NOTE</strong></p>
+<blockquote>
+<div><p>A <code class="docutils literal notranslate"><span class="pre">clone</span></code> of a repository is a full copy of all the repository data from GitHub. When you <code class="docutils literal notranslate"><span class="pre">clone</span></code> a repository, you copy the repository from <a class="reference external" href="http://GitHub.com">GitHub.com</a> to your local machine (the container here).</p>
+</div></blockquote>
+<hr class="docutils" />
+<p>From step one you can remember that your forked repository is be under <code class="docutils literal notranslate"><span class="pre">https://github.com/YOUR-USER-NAME/CTSM</span></code>.</p>
+<p>Clone your own fork from github by using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/YOUR-USER-NAME/CTSM</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/negin513/ctsm.git
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cloning into &#39;ctsm&#39;...
+remote: Enumerating objects: 62275, done.
+remote: Counting objects: 100% (1639/1639), done.
+remote: Compressing objects: 100% (581/581), done.
+remote: Total 62275 (delta 1114), reused 1485 (delta 1026), pack-reused 60636
+Receiving objects: 100% (62275/62275), 29.94 MiB | 17.88 MiB/s, done.
+Resolving deltas: 100% (47069/47069), done.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, go into the cloned repository</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ctsm
+<span class="nb">pwd</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/negins/Desktop/Simulations/tutorials/ctsm
+</pre></div>
+</div>
+</div>
+</div>
+<p>Run <code class="docutils literal notranslate"><span class="pre">manage_externals</span></code> to checkout all the external packages needed for running CTSM:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./manage_externals/checkout_externals
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Processing externals description file : Externals.cfg
+Processing externals description file : Externals_CLM.cfg
+Processing externals description file : Externals_CISM.cfg
+Processing externals description file : Externals_CDEPS.cfg
+Checking status of externals: clm, fates, cism, source_cism, rtm, mosart, mizuroute, ccs_config, cime, cmeps, cdeps, fox, genf90, cpl7, share, mct, parallelio, doc-builder, 
+Checking out externals: clm, Processing externals description file : Externals_CLM.cfg
+Checking out externals: fates, 
+ccs_config, cime, cdeps, Processing externals description file : Externals_CDEPS.cfg
+Checking out externals: fox, genf90, 
+cism, Processing externals description file : Externals_CISM.cfg
+Checking out externals: source_cism, 
+cmeps, cpl7, mizuroute, mosart, rtm, mct, parallelio, share, 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Check the contents of your directory:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CODE_OF_CONDUCT.md        README_EXTERNALS.rst      <span class=" -Color -Color-Blue">manage_externals</span>
+CONTRIBUTING.md           <span class=" -Color -Color-Blue">bld</span>                       <span class=" -Color -Color-Red">parse_cime.cs.status</span>
+Externals.cfg             <span class=" -Color -Color-Blue">ccs_config</span>                <span class=" -Color -Color-Blue">python</span>
+Externals_CLM.cfg         <span class=" -Color -Color-Blue">cime</span>                      <span class=" -Color -Color-Red">run_sys_tests</span>
+LICENSE                   <span class=" -Color -Color-Blue">cime_config</span>               <span class=" -Color -Color-Blue">share</span>
+README                    <span class=" -Color -Color-Blue">components</span>                <span class=" -Color -Color-Blue">src</span>
+README.CHECKLIST.new_case <span class=" -Color -Color-Blue">doc</span>                       <span class=" -Color -Color-Blue">test</span>
+README.NUOPC_driver.md    <span class=" -Color -Color-Blue">libraries</span>                 <span class=" -Color -Color-Blue">tools</span>
+README.md                 <span class=" -Color -Color-Blue">lilac</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>By default, when you clone a repository you will be on <code class="docutils literal notranslate"><span class="pre">master</span></code> or <code class="docutils literal notranslate"><span class="pre">main</span></code> branch of the repository.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git status
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch develop
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+	<span class=" -Color -Color-Red">../biogeochem/.ipynb_checkpoints/</span>
+	<span class=" -Color -Color-Red">.ipynb_checkpoints/</span>
+
+nothing added to commit but untracked files present (use &quot;git add&quot; to track)
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><strong>NOTE</strong></p>
+<blockquote>
+<div><p>A <code class="docutils literal notranslate"><span class="pre">branch</span></code> of a repository is a copy of the original <code class="docutils literal notranslate"><span class="pre">main</span></code> branch (similar to branches in a tree). Branches allow you to preserve the main code (the ‘main’  branch), make a copy (a new branch) and then work within that new branch.</p>
+</div></blockquote>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Next create a branch for your development called (<code class="docutils literal notranslate"><span class="pre">develop</span></code>):</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout -b develop
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to a new branch &#39;develop&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git status
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch develop
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+	<span class=" -Color -Color-Red">src/main/.ipynb_checkpoints/</span>
+
+nothing added to commit but untracked files present (use &quot;git add&quot; to track)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="make-your-code-modifications">
+<h2>4- Make your code modifications:<a class="headerlink" href="#make-your-code-modifications" title="Permalink to this headline">¶</a></h2>
+<p>Now that you have a copy of the code (<code class="docutils literal notranslate"><span class="pre">clone</span></code>) in your machine you can start changing the code.</p>
+<p>In this tutorial we are going to change the rain threshhold for leaf onset and compare the results for KONZ site.</p>
+<p>Note:</p>
+<hr class="docutils" />
+<p><strong>NOTE</strong></p>
+<p>If you are interested in comparing the results from modified code with original code, you should make sure to run original CTSM for your tower of interest.&gt;</p>
+<hr class="docutils" />
+<p>Quesion: Where is KONZ site located? What kind of behavior do we expect by changing the rain threshhold for leaf onset?
+To find more information about KONZ site, please NEON’s website: <a class="reference external" href="https://www.neonscience.org/field-sites/konz">https://www.neonscience.org/field-sites/konz</a></p>
+<p>In this example, we are making these code modifications in <code class="docutils literal notranslate"><span class="pre">src/biogeochem/CNPhenologyMod.F90</span></code>. First we should navigate to the directory:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> src/biogeochem
+</pre></div>
+</div>
+</div>
+</div>
+<p>From your side bar open up the files you’d like to modify by double clicking on the file.</p>
+<p>Here we are modifying <code class="docutils literal notranslate"><span class="pre">rain_threshold</span></code> in <code class="docutils literal notranslate"><span class="pre">src/biogeochem/CNPhenologyMod.F90</span></code>. Open up the <code class="docutils literal notranslate"><span class="pre">CNPhenologyMod.F90</span></code> file by double clicking on the file:</p>
+<p><img alt="image.png" src="notebooks/attachment:16d79fe6-a8f2-4595-a95e-d165c6237809.png" /></p>
+<p>It will open up the file under another tab:</p>
+<p><img alt="image.png" src="notebooks/attachment:77e879be-92e2-4e04-a19b-f06e08985ebf.png" /></p>
+<p><strong>Question:</strong></p>
+<ul class="simple">
+<li><p>Can you find what is the current value of <code class="docutils literal notranslate"><span class="pre">rain_threshhold</span></code>?</p></li>
+</ul>
+<p><strong>Answer:</strong></p>
+<p>The current value of <code class="docutils literal notranslate"><span class="pre">rain_threshold</span></code> is 20 as specified in the code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rain_threshold</span> <span class="o">=</span> <span class="mf">20.</span><span class="n">_r8</span> 
+</pre></div>
+</div>
+<p>Now you can change the <code class="docutils literal notranslate"><span class="pre">rain_threshhold</span></code> to a lower or a higher value.</p>
+<p>For example:  the following modification will set the rain threshhold for leaf onset to 1mm.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rain_threshold</span> <span class="o">=</span> <span class="mf">1.</span><span class="n">_r8</span> 
+
+</pre></div>
+</div>
+<p>Make sure to save before closing the files by clicking the save button from the top toolbar.</p>
+<p><strong>Question:</strong></p>
+<ul class="simple">
+<li><p>How do you think changing this value will impact your simulations?</p></li>
+</ul>
+<p>We can navigate back and run CTSM for our NEON case KONZ with these modifications.</p>
+<p>But first we should save our previous simulation, otherwise it is going to be overwritten.</p>
+<p>For saving the old simulations, we can rename the archive directory:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mv archive archive_original
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next you can run the simulation again with the modified code:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./run_neon --neon-site KONZ --overwrite
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, you can visualize the output of original simulation vs the modified code.</p>
+<p>For example, the following plot shows GPP for the simulations resulting from changing <code class="docutils literal notranslate"><span class="pre">rain_threshold</span></code> to 1mm and 200mm agains neon observation.</p>
+<p><strong>Question:</strong> Can you explain how changing the threshhold changed GPP in this plot?</p>
+<p><img alt="image.png" src="notebooks/attachment:e63b41b8-58fc-4958-84fc-a1071b96a79d.png" /></p>
+</div>
+<div class="section" id="save-your-changes-to-your-github-repository">
+<h2>5- Save your changes to your github repository<a class="headerlink" href="#save-your-changes-to-your-github-repository" title="Permalink to this headline">¶</a></h2>
+<p>When you are happy with your changes, you should make sure you have submitted these changes to your GitHub repository.</p>
+<p>Easiest way to do so:</p>
+<p>First run the following to find all the files that has been modified. You should see all the modified files here.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git status
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch developments
+nothing to commit, working tree clean
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next add these file (or all files) to be saved:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add . 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next commit your changes using a meaningful commit message:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git commit -m <span class="s2">&quot; meaningful commit message&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally push your changes to the remote repository:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git push
+</pre></div>
+</div>
+</div>
+</div>
+<p>To see your changes now you can go to your own fork and your own branch on <a class="reference external" href="http://github.com">github.com</a> and see your recent changes.</p>
+</div>
+<div class="section" id="run-ctsm-using-your-modifications">
+<h2>6- Run CTSM using your modifications.<a class="headerlink" href="#run-ctsm-using-your-modifications" title="Permalink to this headline">¶</a></h2>
+<p>In this step, you will test your modifications by running your own code.</p>
+<p>You can do so by either:
+1- Using <code class="docutils literal notranslate"><span class="pre">./run_neon.py</span></code> script. (easiest method)
+2- Following the steps for running an unsuported single point case.</p>
+<p>For example for testing your code using <code class="docutils literal notranslate"><span class="pre">./run_neon.py</span></code>:
+First, go back to top level repository.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/tutorial
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, run <code class="docutils literal notranslate"><span class="pre">run_neon.py</span></code> to run CTSM for a neon site.</p>
+<p>Do we want to add a meaningful plot, analysis here so they can check it out?</p>
+<p>Some notes / thoughts</p>
+<ul class="simple">
+<li><p>If they have already run the first tutorial, telling them to save the original run (if they have already run it)… mv archive/abby to archive/abby_original</p>
+<ul>
+<li><p>git checkout master</p></li>
+<li><p>run_neon.py (with the original)</p></li>
+</ul>
+</li>
+<li><p>run run_neon.py again and it will save to archive/abby now.</p></li>
+<li><p>add one plot that shows the comparison between the original and modified code.</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "bash"
+        },
+        kernelOptions: {
+            kernelName: "bash",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'bash'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Negin Sobhani, Danica Lombardozzi, Adrianna Foster, Will Wieder<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
