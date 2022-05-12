@@ -22,7 +22,7 @@ jobs:
         PATH="${PATH}:${HOME}/.local/bin"
     - name: Build book TOC file 
       run: |
-        jupyter-book toc ./content
+        jupyter-book toc .
     - name: Build book HTML 
       run: |
         jupyter-book build ./content
