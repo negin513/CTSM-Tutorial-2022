@@ -1,4 +1,4 @@
-name: Publish JupyterBook to GitHub Pages
+name: 1Publish JupyterBook to GitHub Pages
 
 on:
   [push]
