@@ -1,0 +1,58 @@
+# NOTE: This is an example CircleCI configuration that
+# will build your book and preview its HTML content.
+# You will probably have to modify it in order to get it working
+# just the way you want. See https://jupyterbook.org/advanced/circleci.html
+# for more information
+version: 2.1
+jobs:
+  build_page_html:
+    docker:
+      - image: circleci/python:3.7-stretch
+    steps:
+      - checkout
+      - run: pip install --user -r requirements.txt
+      - run:
+          name: Build site intermediate files
+          command: jupyter-book build .
+
+      # Persist the built files for the deploy step
+      - persist_to_workspace:
+          root: .
+          paths:
+            - _build/
+
+  doc:
+    docker:
+      - image: circleci/python:3.7-stretch
+    steps:
+      - prepare_jekyll_installation
+      - run:
+          name: Build the website
+          command: bundle exec jekyll build --baseurl /0/html/
+
+      # Tell Circle to store the documentation output in a folder that we can access later
+      - store_artifacts:
+          path: _site/
+          destination: html
+
+  # Deploy the built site to jupyter-book.github.io
+  deploy:
+    docker:
+      - image: circleci/python:3.7-stretch
+    steps:
+      # Add deployment key fingerprint for CircleCI to use for a push
+      - add_ssh_keys:
+          fingerprints:
+            - "{{ YOUR SSH FINGERPRINT }}"
+
+      - prepare_jekyll_installation
+      - run:
+          name: Build the website for deploy
+          command: bundle exec jekyll build
+
+      # Deploy the built site with ghp-import
+      - run:
+          name: Deploying site using ghp-import
+          command: |
+            pip install ghp-import
+            ghp-import -p -f -n ./_site/
