@@ -1,4 +1,4 @@
-# Test Welcome to the 2022 CTSM mini-tutorial (WIP)  
+# Test Welcome to the 2022 CTSM mini-tutorial (WIP)    
 This repository includes materials for the [Community Terrestrial Systems Model (CTSM)](https://github.com/ESCOMP/CTSM) Spring 2022 mini-tutorial. 
 
 
