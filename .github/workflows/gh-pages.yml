@@ -34,15 +34,22 @@ jobs:
         jupyter-book build .
 
     # Push the book's HTML to github-pages
-    - name: GitHub Pages action
-      if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    #- name: GitHub Pages action
+    #  if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
 
-      uses: peaceiris/actions-gh-pages@v3.8.0
-      with:
-        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        #github_token: ${{ secrets.GITHUB_TOKEN }}
-        #ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        publish_dir: ./_build/html
+    #  uses: peaceiris/actions-gh-pages@v3.8.0
+    #  with:
+    #    #deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+    #    #github_token: ${{ secrets.GITHUB_TOKEN }}
+    #    #ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         
+    #    publish_dir: ./_build/html
+        
+        
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./public
   
 
